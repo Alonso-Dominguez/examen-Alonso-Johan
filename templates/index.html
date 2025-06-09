@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataAnalyzer Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                <h1>DataAnalyzer</h1>
+            </div>
+
+            <nav>
+                <div class="nav-section">
+                    <div class="nav-title">
+                        <i class="fas fa-database"></i>
+                        <span>Datos</span>
+                    </div>
+                    <div class="nav-item active" data-action="load-data">
+                        <i class="fas fa-upload"></i>
+                        <span>Cargar Datos</span>
+                    </div>
+                    <div class="nav-item" data-action="clean-data">
+                        <i class="fas fa-broom"></i>
+                        <span>Limpieza de Datos</span>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">
+                        <i class="fas fa-wrench"></i>
+                        <span>Preparación</span>
+                    </div>
+                    <div class="nav-item" data-action="show-head">
+                        <i class="fas fa-angle-double-up"></i>
+                        <span>Primeras Filas</span>
+                    </div>
+                    <div class="nav-item" data-action="show-tail">
+                        <i class="fas fa-angle-double-down"></i>
+                        <span>Últimas Filas</span>
+                    </div>
+                    <div class="nav-item" data-action="show-info">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Tipo de dato de cada columna</span>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">
+                        <i class="fas fa-filter"></i>
+                        <span>Análisis</span>
+                    </div>
+                    <div class="nav-item" data-action="select-column">
+                        <i class="fas fa-columns"></i>
+                        <span>Seleccionar Columna</span>
+                    </div>
+                    <div class="nav-item" data-action="filter-data">
+                        <i class="fas fa-search"></i>
+                        <span>Filtrar Datos</span>
+                    </div>
+                    <div class="nav-item" data-action="visualize-data">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>Visualización</span>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header">
+                <h2 id="panel-title">Cargar Datos</h2>
+                <div class="data-source" id="data-source-info" style="display: none;">
+                    <span id="current-dataset"></span>
+                    <button class="btn btn-outline" id="change-dataset">
+                        <i class="fas fa-sync-alt"></i> Cambiar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Load Data Panel -->
+            <div class="panel" id="load-data-panel">
+                <div class="tabs">
+                    <div class="tab active" data-tab="upload">Subir CSV</div>
+                    <div class="tab" data-tab="datasets">Datasets</div>
+                </div>
+
+                <!-- Upload CSV Tab -->
+                <div id="upload-tab">
+                    <div class="upload-box" id="upload-box">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Arrastra tu archivo CSV o JSON aquí</h3>
+                        <p>o</p>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-folder-open"></i> Seleccionar archivo
+                        </button>
+                        <input type="file" id="file-input" accept=".csv" style="display: none;">
+                    </div>
+                </div>
+
+                <!-- Datasets Tab -->
+                <div id="datasets-tab" style="display: none;">
+                    <h3 class="panel-title">Datasets Predefinidos</h3>
+                    <p class="panel-subtitle">Selecciona uno de nuestros datasets de ejemplo</p>
+
+                    <div class="dataset-grid">
+                        <div class="dataset-card" data-dataset="iris">
+                            <i class="fas fa-seedling"></i>
+                            <h4>Iris</h4>
+                            <p>150 flores × 5 columnas</p>
+                        </div>
+                        <div class="dataset-card" data-dataset="tips">
+                            <i class="fas fa-utensils"></i>
+                            <h4>Tips</h4>
+                            <p>244 registros × 7 columnas</p>
+                        </div>
+                        <div class="dataset-card" data-dataset="titanic">
+                            <i class="fas fa-ship"></i>
+                            <h4>Titanic</h4>
+                            <p>891 pasajeros × 15 columnas</p>
+                        </div>
+                        <div class="dataset-card" data-dataset="mpg">
+                            <i class="fas fa-car"></i>
+                            <h4>MPG</h4>
+                            <p>398 autos × 9 columnas</p>
+                        </div>
+                    </div>
+
+                    <h3 class="panel-title" style="margin-top:2em;">Tus archivos CSV en uploads</h3>
+                    <div class="dataset-grid" id="local-dataset-grid">
+                        <!-- Aquí se insertarán los archivos locales -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Preview Panel -->
+            <div class="panel" id="data-preview-panel" style="display: none;">
+                <div class="panel-header">
+                    <h3 class="panel-title" id="preview-title">Vista Previa</h3>
+                    <div>
+                        <button class="btn btn-outline" id="show-stats">
+                            <i class="fas fa-chart-pie"></i> Estadísticas
+                        </button>
+                    </div>
+                </div>
+
+                <div class="stats-container" id="stats-container" style="display: none;">
+                    <!-- Stats cards will be inserted here -->
+                </div>
+
+                <div class="table-responsive">
+                    <table class="data-table" id="data-table">
+                        <!-- Table content will be inserted here -->
+                    </table>
+                </div>
+            </div>
+
+            <!-- Configuration Panel -->
+            <div class="panel" id="config-panel" style="display: none;">
+                <div class="panel-header">
+                    <h3 class="panel-title" id="config-title">Configuración</h3>
+                </div>
+
+                <form id="config-form">
+                    <!-- Form fields will be inserted here -->
+                </form>
+
+                <div class="form-actions">
+                    <button class="btn btn-outline" id="cancel-btn">
+                        <i class="fas fa-times"></i> Cancelar
+                    </button>
+                    <button class="btn btn-primary" id="execute-btn">
+                        <i class="fas fa-play"></i> Ejecutar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Data Cleaning Panel -->
+            <div class="panel" id="clean-data-panel" style="display: none;">
+                <div class="panel-header">
+                    <h3 class="panel-title">Limpieza de Datos</h3>
+                </div>
+
+                <div class="cleaning-options" id="cleaning-options">
+                    <div class="cleaning-card" data-action="fill-na">
+                        <h4><i class="fas fa-fill-drip"></i> Rellenar valores faltantes</h4>
+                        <p>Reemplaza valores nulos o faltantes con un valor específico</p>
+                    </div>
+                    <div class="cleaning-card" data-action="drop-na">
+                        <h4><i class="fas fa-trash-alt"></i> Eliminar filas con valores faltantes</h4>
+                        <p>Remueve filas que contengan valores nulos o faltantes</p>
+                    </div>
+                    <div class="cleaning-card" data-action="drop-duplicates">
+                        <h4><i class="fas fa-clone"></i> Eliminar duplicados</h4>
+                        <p>Remueve filas duplicadas del dataset</p>
+                    </div>
+                    <div class="cleaning-card" data-action="convert-types">
+                        <h4><i class="fas fa-exchange-alt"></i> Convertir tipos de datos</h4>
+                        <p>Cambia el tipo de datos de una columna específica</p>
+                    </div>
+                </div>
+
+                <div id="cleaning-form-container" style="display: none;">
+                    <form id="cleaning-form">
+                        <!-- Form fields will be inserted here -->
+                    </form>
+
+                    <div class="form-actions">
+                        <button class="btn btn-outline" id="cancel-cleaning-btn">
+                            <i class="fas fa-times"></i> Cancelar
+                        </button>
+                        <button class="btn btn-primary" id="apply-cleaning-btn">
+                            <i class="fas fa-check"></i> Aplicar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visualization Panel -->
+            <div class="panel" id="visualization-panel" style="display: none;">
+                <div class="panel-header">
+                    <h3 class="panel-title">Visualización de Datos</h3>
+                </div>
+
+                <form id="visualization-form">
+                    <div class="form-group">
+                        <label>Tipo de gráfico:</label>
+                        <select class="form-control" name="chart-type" id="chart-type">
+                            <option value="histogram">Histograma</option>
+                            <option value="bar">Gráfico de Barras</option>
+                            <option value="line">Gráfico de Líneas</option>
+                            <option value="pie">Gráfico de Torta</option>
+                            <option value="scatter">Gráfico de Dispersión</option>
+                            <option value="box">Diagrama de Caja</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="x-axis-group">
+                        <label>Eje X:</label>
+                        <select class="form-control" name="x-axis" id="x-axis">
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="y-axis-group" style="display: none;">
+                        <label>Eje Y:</label>
+                        <select class="form-control" name="y-axis" id="y-axis">
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="color-group" style="display: none;">
+                        <label>Color por:</label>
+                        <select class="form-control" name="color-by" id="color-by">
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                    </div>
+                </form>
+
+                <div class="chart-container">
+                    <canvas id="data-chart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const navItems = document.querySelectorAll('.nav-item');
+            const tabs = document.querySelectorAll('.tab');
+            const fileInput = document.getElementById('file-input');
+            const uploadBox = document.getElementById('upload-box');
+            const datasetCards = document.querySelectorAll('.dataset-card');
+            const loadDataPanel = document.getElementById('load-data-panel');
+            const dataPreviewPanel = document.getElementById('data-preview-panel');
+            const configPanel = document.getElementById('config-panel');
+            const cleanDataPanel = document.getElementById('clean-data-panel');
+            const visualizationPanel = document.getElementById('visualization-panel');
+            const panelTitle = document.getElementById('panel-title');
+            const dataSourceInfo = document.getElementById('data-source-info');
+            const currentDataset = document.getElementById('current-dataset');
+            const changeDatasetBtn = document.getElementById('change-dataset');
+            const showStatsBtn = document.getElementById('show-stats');
+            const statsContainer = document.getElementById('stats-container');
+            const dataTable = document.getElementById('data-table');
+            const configForm = document.getElementById('config-form');
+            const executeBtn = document.getElementById('execute-btn');
+            const cancelBtn = document.getElementById('cancel-btn');
+            const previewTitle = document.getElementById('preview-title');
+            const cleaningCards = document.querySelectorAll('.cleaning-card');
+            const cleaningFormContainer = document.getElementById('cleaning-form-container');
+            const cleaningForm = document.getElementById('cleaning-form');
+            const applyCleaningBtn = document.getElementById('apply-cleaning-btn');
+            const cancelCleaningBtn = document.getElementById('cancel-cleaning-btn');
+            const chartTypeSelect = document.getElementById('chart-type');
+            const xAxisSelect = document.getElementById('x-axis');
+            const yAxisSelect = document.getElementById('y-axis');
+            const colorBySelect = document.getElementById('color-by');
+            const xAxisGroup = document.getElementById('x-axis-group');
+            const yAxisGroup = document.getElementById('y-axis-group');
+            const colorGroup = document.getElementById('color-group');
+            const chartCanvas = document.getElementById('data-chart');
+            
+            // State
+            let currentData = null;
+            let currentAction = 'load-data';
+            let currentSource = null;
+            let dataChart = null;
+            let cleaningAction = null;
+
+            // Event Listeners
+            navItems.forEach(item => item.addEventListener('click', handleNavItemClick));
+            tabs.forEach(tab => tab.addEventListener('click', handleTabChange));
+            fileInput.addEventListener('change', handleFileUpload);
+            uploadBox.addEventListener('click', () => fileInput.click());
+            datasetCards.forEach(card => card.addEventListener('click', handleDatasetSelect));
+            changeDatasetBtn.addEventListener('click', handleChangeDataset);
+            showStatsBtn.addEventListener('click', toggleStats);
+            executeBtn.addEventListener('click', handleExecute);
+            cancelBtn.addEventListener('click', handleCancel);
+            cleaningCards.forEach(card => card.addEventListener('click', handleCleaningCardClick));
+            applyCleaningBtn.addEventListener('click', handleApplyCleaning);
+            cancelCleaningBtn.addEventListener('click', handleCancelCleaning);
+            chartTypeSelect.addEventListener('change', updateChartControls);
+            xAxisSelect.addEventListener('change', updateChart);
+            yAxisSelect.addEventListener('change', updateChart);
+            colorBySelect.addEventListener('change', updateChart);
+
+            // Functions
+            function handleNavItemClick(e) {
+                const action = this.getAttribute('data-action');
+                
+                // Update active nav item
+                navItems.forEach(item => item.classList.remove('active'));
+                this.classList.add('active');
+                
+                currentAction = action;
+                panelTitle.textContent = this.querySelector('span').textContent;
+
+                if (action === 'load-data') {
+                    loadDataPanel.style.display = 'block';
+                    dataPreviewPanel.style.display = 'none';
+                    configPanel.style.display = 'none';
+                    cleanDataPanel.style.display = 'none';
+                    visualizationPanel.style.display = 'none';
+                } else if (action === 'clean-data') {
+                    loadDataPanel.style.display = 'none';
+                    dataPreviewPanel.style.display = 'none';
+                    configPanel.style.display = 'none';
+                    cleanDataPanel.style.display = 'block';
+                    visualizationPanel.style.display = 'none';
+                    showCleaningOptions();
+                } else if (action === 'visualize-data') {
+                    if (!currentData) {
+                        Swal.fire({icon: 'warning', title: 'Atención', text: 'Por favor, carga un dataset primero'});
+                        document.querySelector('[data-action="load-data"]').click();
+                        return;
+                    }
+                    loadDataPanel.style.display = 'none';
+                    dataPreviewPanel.style.display = 'none';
+                    configPanel.style.display = 'none';
+                    cleanDataPanel.style.display = 'none';
+                    visualizationPanel.style.display = 'block';
+                    setupVisualizationPanel();
+                } else if (currentData) {
+                    showConfigPanel(action);
+                } else {
+                    Swal.fire({icon: 'warning', title: 'Atención', text: 'Por favor, carga un dataset primero'});
+                    document.querySelector('[data-action="load-data"]').click();
+                }
+            }
+
+            function handleTabChange() {
+                tabs.forEach(tab => tab.classList.remove('active'));
+                this.classList.add('active');
+
+                if (this.getAttribute('data-tab') === 'upload') {
+                    document.getElementById('upload-tab').style.display = 'block';
+                    document.getElementById('datasets-tab').style.display = 'none';
+                } else {
+                    document.getElementById('upload-tab').style.display = 'none';
+                    document.getElementById('datasets-tab').style.display = 'block';
+                }
+            }
+
+            function handleFileUpload(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                const formData = new FormData();
+                formData.append('file', file);
+
+                fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        Swal.fire({icon: 'error', title: 'Error', text: data.error});
+                        return;
+                    }
+                    currentData = data;
+                    currentSource = file.name;
+                    updateUIAfterLoad();
+                })
+                .catch(error => {
+                    Swal.fire({icon: 'error', title: 'Error', text: 'Error uploading file: ' + error.message});
+                });
+            }
+
+            function handleDatasetSelect() {
+                const datasetName = this.getAttribute('data-dataset');
+                
+                fetch(`/load_sample/${datasetName}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        Swal.fire({icon: 'error', title: 'Error', text: data.error});
+                        return;
+                    }
+                    currentData = data;
+                    currentSource = `Dataset: ${datasetName}`;
+                    updateUIAfterLoad();
+                })
+                .catch(error => {
+                    Swal.fire({icon: 'error', title: 'Error', text: 'Error loading dataset: ' + error.message});
+                });
+            }
+
+            function updateUIAfterLoad() {
+                loadDataPanel.style.display = 'none';
+                dataPreviewPanel.style.display = 'block';
+                configPanel.style.display = 'none';
+                cleanDataPanel.style.display = 'none';
+                visualizationPanel.style.display = 'none';
+                
+                dataSourceInfo.style.display = 'flex';
+                currentDataset.textContent = currentSource;
+                
+                // Mostrar las primeras filas por defecto
+                showDataPreview(currentData);
+            }
+
+            function showDataPreview(data) {
+                previewTitle.textContent = 'Vista Previa (' + currentSource + ')';
+                
+                // Limpiar tabla
+                dataTable.innerHTML = '';
+                
+                // Crear encabezados
+                const thead = document.createElement('thead');
+                const headerRow = document.createElement('tr');
+                
+                data.columns.forEach(col => {
+                    const th = document.createElement('th');
+                    th.textContent = col;
+                    headerRow.appendChild(th);
+                });
+                
+                thead.appendChild(headerRow);
+                dataTable.appendChild(thead);
+                
+                // Crear cuerpo de la tabla
+                const tbody = document.createElement('tbody');
+                
+                data.data.forEach(row => {
+                    const tr = document.createElement('tr');
+                    
+                    row.forEach(cell => {
+                        const td = document.createElement('td');
+                        td.textContent = cell;
+                        tr.appendChild(td);
+                    });
+                    
+                    tbody.appendChild(tr);
+                });
+                
+                dataTable.appendChild(tbody);
+            }
+
+            function showConfigPanel(action) {
+                loadDataPanel.style.display = 'none';
+                dataPreviewPanel.style.display = 'none';
+                configPanel.style.display = 'block';
+                cleanDataPanel.style.display = 'none';
+                visualizationPanel.style.display = 'none';
+                
+                // Limpiar formulario
+                configForm.innerHTML = '';
+                
+                // Configurar según la acción
+                let title = '';
+                let html = '';
+                
+                switch(action) {
+                    case 'show-head':
+                        title = 'Mostrar primeras filas';
+                        html = `
+                            <div class="form-group">
+                                <label>Número de filas:</label>
+                                <input type="number" class="form-control" name="rows" value="10" min="1">
+                            </div>
+                        `;
+                        break;
+                        
+                    case 'show-tail':
+                        title = 'Mostrar últimas filas';
+                        html = `
+                            <div class="form-group">
+                                <label>Número de filas:</label>
+                                <input type="number" class="form-control" name="rows" value="10" min="1">
+                            </div>
+                        `;
+                        break;
+                        
+                    case 'select-column':
+                        title = 'Seleccionar columna';
+                        html = `
+                            <div class="form-group">
+                                <label>Columna:</label>
+                                <select class="form-control" name="column">
+                                    ${currentData.columns.map(col => `<option value="${col}">${col}</option>`).join('')}
+                                </select>
+                            </div>
+                        `;
+                        break;
+                        
+                    case 'filter-data':
+                        title = 'Filtrar datos';
+                        html = buildFilterForm();
+                        break;
+
+                    case 'show-describe':
+                        title = 'Estadísticas descriptivas';
+                        // No necesita configuración adicional
+                        html = '<p>Mostrando estadísticas descriptivas para todas las columnas numéricas.</p>';
+                        break;
+                }
+                
+                document.getElementById('config-title').textContent = title;
+                configForm.innerHTML = html;
+
+                // Si es la acción de estadísticas, ejecutamos directamente
+                if (action === 'show-describe') {
+                    handleExecute();
+                }
+            }
+
+            function buildFilterForm() {
+                return `
+                    <div class="filter-builder">
+                        <div class="filter-row">
+                            <select class="form-control" id="filter-column-select">
+                                ${currentData.columns.map(col => `<option value="${col}">${col}</option>`).join('')}
+                            </select>
+                            <select class="form-control" id="filter-operator-select">
+                                <option value="==">igual a</option>
+                                <option value="!=">diferente de</option>
+                                <option value=">">mayor que</option>
+                                <option value="<">menor que</option>
+                                <option value=">=">mayor o igual que</option>
+                                <option value="<=">menor o igual que</option>
+                                <option value="contains">contiene</option>
+                                <option value="startsWith">comienza con</option>
+                                <option value="endsWith">termina con</option>
+                            </select>
+                            <input type="text" class="form-control" id="filter-value-input" placeholder="Valor">
+                        </div>
+                        <div class="filter-preview" id="filter-preview">
+                            Filtro: ninguno aplicado
+                        </div>
+                        <div class="filter-actions">
+                            <button type="button" class="btn btn-outline" id="add-filter-btn">
+                                <i class="fas fa-plus"></i> Añadir Filtro
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+
+            function handleExecute() {
+                const formData = new FormData(configForm);
+                const params = {};
+                
+                for (let [key, value] of formData.entries()) {
+                    params[key] = value;
+                }
+                
+                // Para el filtro, necesitamos obtener los valores de los elementos dinámicos
+                if (currentAction === 'filter-data') {
+                    const columnSelect = document.getElementById('filter-column-select');
+                    const operatorSelect = document.getElementById('filter-operator-select');
+                    const valueInput = document.getElementById('filter-value-input');
+                    
+                    if (columnSelect && operatorSelect && valueInput) {
+                        params['column'] = columnSelect.value;
+                        params['operator'] = operatorSelect.value;
+                        params['value'] = valueInput.value;
+                    }
+                }
+                
+                fetch('/data/action', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: currentAction,
+                        params: params
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        Swal.fire({icon: 'error', title: 'Error', text: data.error});
+                        return;
+                    }
+                    if (currentAction === 'show-info') {
+                        const infoHtml = displayInfo(data);
+                        configForm.innerHTML = `
+                            <div class="form-group">
+                                <label>Información del Dataset:</label>
+                                <div class="info-container">${infoHtml}</div>
+                            </div>
+                        `;
+                    } else if (currentAction === 'show-describe') {
+                        showDescriptiveStats(data.description);
+                    } else {
+                        currentData = data;
+                        loadDataPanel.style.display = 'none';
+                        dataPreviewPanel.style.display = 'block';
+                        configPanel.style.display = 'none';
+                        showDataPreview(currentData);
+                    }
+                })
+                .catch(error => {
+                    Swal.fire({icon: 'error', title: 'Error', text: 'Error executing action: ' + error.message});
+                });
+            }
+
+            function displayInfo(data) {
+                const info = data.info;
+                let html = `
+                    <div class="info-summary">
+                        <div class="stat-card">
+                            <h3>Filas</h3>
+                            <p>${info.summary.Filas}</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Columnas</h3>
+                            <p>${info.summary.Columnas}</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Uso de Memoria</h3>
+                            <p>${info.summary.Memoria}</p>
+                        </div>
+                    </div>
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Columna</th>
+                                <th>Tipo</th>
+                                <th>No Nulos</th>
+                                <th>% Nulos</th>
+                                <th>Valores Únicos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+                
+                info.columns.forEach(col => {
+                    html += `
+                        <tr>
+                            <td>${col.name}</td>
+                            <td>${col.type}</td>
+                            <td>${col.non_null}</td>
+                            <td>${col.null_percent}</td>
+                            <td>${col.unique}</td>
+                        </tr>
+                    `;
+                });
+                
+                html += `</tbody></table>`;
+                
+                return html;
+            }
+
+            function showDescriptiveStats(description) {
+                // Mostrar estadísticas en el panel de vista previa
+                loadDataPanel.style.display = 'none';
+                dataPreviewPanel.style.display = 'block';
+                configPanel.style.display = 'none';
+                
+                // Limpiar tabla
+                dataTable.innerHTML = '';
+                
+                // Crear encabezados para la tabla de estadísticas
+                const thead = document.createElement('thead');
+                const headerRow = document.createElement('tr');
+                
+                const statHeaders = ['Statistic', ...Object.keys(description)];
+                statHeaders.forEach(header => {
+                    const th = document.createElement('th');
+                    th.textContent = header;
+                    headerRow.appendChild(th);
+                });
+                
+                thead.appendChild(headerRow);
+                dataTable.appendChild(thead);
+                
+                // Crear cuerpo de la tabla de estadísticas
+                const tbody = document.createElement('tbody');
+                
+                const stats = ['count', 'mean', 'std', 'min', '25%', '50%', '75%', 'max'];
+                stats.forEach(stat => {
+                    const tr = document.createElement('tr');
+                    
+                    // Nombre del estadístico
+                    const statTd = document.createElement('td');
+                    statTd.textContent = stat;
+                    statTd.style.fontWeight = '500';
+                    tr.appendChild(statTd);
+                    
+                    // Valores para cada columna
+                    Object.keys(description).forEach(col => {
+                        const td = document.createElement('td');
+                        td.textContent = description[col][stat] || '';
+                        tr.appendChild(td);
+                    });
+                    
+                    tbody.appendChild(tr);
+                });
+                
+                dataTable.appendChild(tbody);
+                
+                // Mostrar estadísticas básicas
+                showBasicStats();
+            }
+
+            function showBasicStats() {
+                // Limpiar contenedor de estadísticas
+                statsContainer.innerHTML = '';
+                
+                // Mostrar estadísticas básicas
+                const basicStatsHtml = `
+                    <div class="stat-card">
+                        <h3>Filas</h3>
+                        <p>${currentData.shape.rows}</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Columnas</h3>
+                        <p>${currentData.shape.cols}</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Tipos de datos</h3>
+                        <div style="max-height: 150px; overflow-y: auto;">
+                            ${Object.entries(currentData.dtypes).map(([col, dtype]) => `
+                                <div><strong>${col}:</strong> ${dtype}</div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+                
+                statsContainer.innerHTML = basicStatsHtml;
+                statsContainer.style.display = 'grid';
+                showStatsBtn.innerHTML = '<i class="fas fa-eye-slash"></i> Ocultar estadísticas';
+            }
+
+            function handleCancel() {
+                if (currentData) {
+                    loadDataPanel.style.display = 'none';
+                    dataPreviewPanel.style.display = 'block';
+                    configPanel.style.display = 'none';
+                } else {
+                    document.querySelector('[data-action="load-data"]').click();
+                }
+            }
+
+            function handleChangeDataset() {
+                currentData = null;
+                currentSource = null;
+                dataSourceInfo.style.display = 'none';
+                document.querySelector('[data-action="load-data"]').click();
+            }
+
+            function toggleStats() {
+                if (statsContainer.style.display === 'none') {
+                    showBasicStats();
+                } else {
+                    statsContainer.style.display = 'none';
+                    showStatsBtn.innerHTML = '<i class="fas fa-chart-pie"></i> Estadísticas';
+                }
+            }
+
+            function handleCleaningCardClick() {
+                cleaningCards.forEach(card => card.classList.remove('active'));
+                this.classList.add('active');
+                
+                cleaningAction = this.getAttribute('data-action');
+                showCleaningForm(cleaningAction);
+            }
+
+            function showCleaningOptions() {
+                cleaningFormContainer.style.display = 'none';
+                cleaningCards.forEach(card => card.classList.remove('active'));
+            }
+
+            function showCleaningForm(action) {
+                cleaningForm.innerHTML = '';
+                
+                switch(action) {
+                    case 'fill-na':
+                        cleaningForm.innerHTML = `
+                            <div class="form-group">
+                                <label>Columna:</label>
+                                <select class="form-control" name="column">
+                                    ${currentData.columns.map(col => `<option value="${col}">${col}</option>`).join('')}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Valor de reemplazo:</label>
+                                <input type="text" class="form-control" name="fill-value" placeholder="0, 'N/A', media, etc.">
+                            </div>
+                        `;
+                        break;
+                        
+                    case 'drop-na':
+                        cleaningForm.innerHTML = `
+                            <div class="form-group">
+                                <label>Columnas a verificar (dejar vacío para todas):</label>
+                                <select class="form-control" name="columns" multiple>
+                                    ${currentData.columns.map(col => `<option value="${col}">${col}</option>`).join('')}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Umbral (máximo % de valores faltantes permitidos por fila):</label>
+                                <input type="number" class="form-control" name="threshold" min="0" max="100" value="100" step="5">
+                                <small class="text-muted">100% = eliminar solo filas con todos los valores faltantes</small>
+                            </div>
+                        `;
+                        break;
+                        
+                    case 'drop-duplicates':
+                        cleaningForm.innerHTML = `
+                            <div class="form-group">
+                                <label>Columnas a considerar (dejar vacío para todas):</label>
+                                <select class="form-control" name="columns" multiple>
+                                    ${currentData.columns.map(col => `<option value="${col}">${col}</option>`).join('')}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Opciones:</label>
+                                <div>
+                                    <input type="checkbox" id="keep-first" name="keep-first" checked>
+                                    <label for="keep-first">Mantener primera ocurrencia</label>
+                                </div>
+                            </div>
+                        `;
+                        break;
+                        
+                    case 'convert-types':
+                        cleaningForm.innerHTML = `
+                            <div class="form-group">
+                                <label>Columna:</label>
+                                <select class="form-control" name="column">
+                                    ${currentData.columns.map(col => `<option value="${col}">${col}</option>`).join('')}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Tipo de dato:</label>
+                                <select class="form-control" name="type">
+                                    <option value="number">Número</option>
+                                    <option value="string">Texto</option>
+                                    <option value="boolean">Booleano</option>
+                                    <option value="date">Fecha</option>
+                                </select>
+                            </div>
+                        `;
+                        break;
+                }
+                
+                cleaningFormContainer.style.display = 'block';
+            }
+
+            function handleApplyCleaning() {
+                const formData = new FormData(cleaningForm);
+                const params = {};
+                
+                for (let [key, value] of formData.entries()) {
+                    // Manejar múltiples selecciones
+                    if (key === 'columns') {
+                        params[key] = params[key] || [];
+                        params[key].push(value);
+                    } else {
+                        params[key] = value;
+                    }
+                }
+                
+                fetch('/data/action', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: cleaningAction,
+                        params: params
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        Swal.fire({icon: 'error', title: 'Error', text: data.error});
+                        return;
+                    }
+                    currentData = data;
+                    showDataPreview(currentData);
+                    showCleaningOptions();
+                    Swal.fire({icon: 'success', title: 'Éxito', text: 'Limpieza aplicada con éxito'});
+                })
+                .catch(error => {
+                    Swal.fire({icon: 'error', title: 'Error', text: 'Error applying cleaning: ' + error.message});
+                });
+            }
+
+            function handleCancelCleaning() {
+                showCleaningOptions();
+            }
+
+            function setupVisualizationPanel() {
+                // Limpiar selects
+                xAxisSelect.innerHTML = '';
+                yAxisSelect.innerHTML = '';
+                colorBySelect.innerHTML = '';
+                
+                // Poblar selects con columnas disponibles
+                currentData.columns.forEach(col => {
+                    const option = document.createElement('option');
+                    option.value = col;
+                    option.textContent = col;
+                    xAxisSelect.appendChild(option.cloneNode(true));
+                    yAxisSelect.appendChild(option.cloneNode(true));
+                    colorBySelect.appendChild(option.cloneNode(true));
+                });
+                
+                // Actualizar controles según el tipo de gráfico
+                updateChartControls();
+                
+                // Crear gráfico inicial
+                updateChart();
+            }
+
+            function updateChartControls() {
+                const chartType = chartTypeSelect.value;
+                
+                // Mostrar/ocultar controles según el tipo de gráfico
+                xAxisGroup.style.display = 'block';
+                
+                if (chartType === 'scatter' || chartType === 'line') {
+                    yAxisGroup.style.display = 'block';
+                } else {
+                    yAxisGroup.style.display = 'none';
+                }
+                
+                if (chartType === 'pie' || chartType === 'bar') {
+                    colorGroup.style.display = 'block';
+                } else {
+                    colorGroup.style.display = 'none';
+                }
+            }
+
+            function updateChart() {
+                const chartType = chartTypeSelect.value;
+                const xCol = xAxisSelect.value;
+                const yCol = yAxisSelect.value;
+                const colorCol = colorBySelect.value;
+                
+                fetch('/visualization', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chart_type: chartType,
+                        x_col: xCol,
+                        y_col: yCol,
+                        color_col: colorCol
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        Swal.fire({icon: 'error', title: 'Error', text: data.error});
+                        return;
+                    }
+                    // Actualizar el gráfico con la imagen recibida
+                    const img = new Image();
+                    img.src = 'data:image/png;base64,' + data.image;
+                    // Limpiar el canvas
+                    const ctx = chartCanvas.getContext('2d');
+                    ctx.clearRect(0, 0, chartCanvas.width, chartCanvas.height);
+                    // Dibujar la nueva imagen
+                    img.onload = function() {
+                        chartCanvas.width = img.width;
+                        chartCanvas.height = img.height;
+                        ctx.drawImage(img, 0, 0);
+                    };
+                })
+                .catch(error => {
+                    Swal.fire({icon: 'error', title: 'Error', text: 'Error generating visualization: ' + error.message});
+                });
+            }
+
+            // Al cargar la página, cargar los datasets locales
+            fetch('/list_local_datasets')
+                .then(response => response.json())
+                .then(data => {
+                    const grid = document.getElementById('local-dataset-grid');
+                    grid.innerHTML = '';
+                    data.datasets.forEach(fname => {
+                        const div = document.createElement('div');
+                        div.className = 'dataset-card';
+                        div.setAttribute('data-local-dataset', fname);
+                        div.innerHTML = `<i class="fas fa-file-csv"></i><h4>${fname}</h4>`;
+                        grid.appendChild(div);
+                    });
+                    // Listeners para los datasets locales
+                    document.querySelectorAll('[data-local-dataset]').forEach(card => {
+                        card.addEventListener('click', function() {
+                            const fname = this.getAttribute('data-local-dataset');
+                            fetch(`/load_local_dataset/${fname}`)
+                                .then(response => response.json())
+                                .then(data => {
+                                    if (data.error) {
+                                        Swal.fire({icon: 'error', title: 'Error', text: data.error});
+                                        return;
+                                    }
+                                    currentData = data;
+                                    currentSource = `Archivo: ${fname}`;
+                                    updateUIAfterLoad();
+                                })
+                                .catch(error => {
+                                    Swal.fire({icon: 'error', title: 'Error', text: 'Error cargando archivo: ' + error.message});
+                                });
+                        });
+                    });
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+agente_id,nombre,correo,especializacion,fecha_creacion,fecha_actualizacion
+1,Norma Fisher,norma.fisher@ejemplo.com,Seguridad,2024-03-30 00:00:00,2024-04-08 00:00:00
+2,Jorge Sullivan,jorge.sullivan@ejemplo.com,Recursos Humanos,2024-10-12 00:00:00,2024-11-01 00:00:00
+3,Elizabeth Woods,elizabeth.woods@ejemplo.com,Administracion,2024-06-28 00:00:00,2024-07-27 00:00:00
+4,Susan Wagner,susan.wagner@ejemplo.com,IT,2024-03-26 00:00:00,2024-04-20 00:00:00
+5,Peter Montgomery,peter.montgomery@ejemplo.com,Administracion,2024-12-05 00:00:00,2024-12-21 00:00:00
+6,Theodore Mcgrath,theodore.mcgrath@ejemplo.com,Recursos Humanos,2024-08-25 00:00:00,2024-09-20 00:00:00
+7,Stephanie Collins,stephanie.collins@ejemplo.com,Soporte,2024-12-22 00:00:00,2025-01-04 00:00:00
+8,Stephanie Sutton,stephanie.sutton@ejemplo.com,IT,2024-08-15 00:00:00,2024-09-05 00:00:00
+9,Brian Hamilton,brian.hamilton@ejemplo.com,Soporte,2024-05-09 00:00:00,2024-05-17 00:00:00
+10,Susan Levy,susan.levy@ejemplo.com,Recursos Humanos,2024-08-03 00:00:00,2024-08-27 00:00:00
+11,Sean Green,sean.green@ejemplo.com,Seguridad,2024-09-28 00:00:00,2024-10-22 00:00:00
+12,Kimberly Smith,kimberly.smith@ejemplo.com,Ventas,2024-09-14 00:00:00,2024-09-19 00:00:00
+13,Jennifer Summers,jennifer.summers@ejemplo.com,Administracion,2024-01-12 00:00:00,2024-01-30 00:00:00
+14,April Snyder,april.snyder@ejemplo.com,Ventas,2024-01-01 00:00:00,2024-01-21 00:00:00
+15,Dana Nguyen,dana.nguyen@ejemplo.com,Seguridad,2024-09-02 00:00:00,2024-09-28 00:00:00
+16,Cheryl Bradley,cheryl.bradley@ejemplo.com,Recursos Humanos,2024-08-14 00:00:00,2024-08-23 00:00:00
+17,Walter Pratt,walter.pratt@ejemplo.com,Soporte,2024-02-28 00:00:00,2024-03-20 00:00:00
+18,Bobby Flores,bobby.flores@ejemplo.com,Ventas,2024-02-22 00:00:00,2024-03-14 00:00:00
+19,Tasha Rodriguez,tasha.rodriguez@ejemplo.com,Desarrollo,2024-05-31 00:00:00,2024-06-25 00:00:00
+20,Michelle Kelley,michelle.kelley@ejemplo.com,Soporte,2024-06-08 00:00:00,2024-06-15 00:00:00
+21,Kimberly Maynard,kimberly.maynard@ejemplo.com,Ventas,2024-04-16 00:00:00,2024-04-17 00:00:00
+22,Laurie Wallace,laurie.wallace@ejemplo.com,Soporte,2024-09-13 00:00:00,2024-09-20 00:00:00
+23,Janice Johnston,janice.johnston@ejemplo.com,Ventas,2024-08-08 00:00:00,2024-08-21 00:00:00
+24,Collin Lopez,collin.lopez@ejemplo.com,Marketing,2024-02-12 00:00:00,2024-03-12 00:00:00
+25,Mary Alvarez,mary.alvarez@ejemplo.com,Desarrollo,2024-11-02 00:00:00,2024-11-17 00:00:00
+26,Peter Mcdowell,peter.mcdowell@ejemplo.com,Desarrollo,2024-10-31 00:00:00,2024-11-23 00:00:00
+27,Sarah Villanueva,sarah.villanueva@ejemplo.com,Seguridad,2024-09-17 00:00:00,2024-10-03 00:00:00
+28,Kimberly Myers,kimberly.myers@ejemplo.com,Recursos Humanos,2024-05-13 00:00:00,2024-06-10 00:00:00
+29,Desiree Cain,desiree.cain@ejemplo.com,Ventas,2024-02-28 00:00:00,2024-03-17 00:00:00
+30,Stephanie Lawrence,stephanie.lawrence@ejemplo.com,Soporte,2024-08-06 00:00:00,2024-08-19 00:00:00
+31,Lauren Hayes,lauren.hayes@ejemplo.com,Administracion,2024-10-01 00:00:00,2024-10-17 00:00:00
+32,Whitney Stark,whitney.stark@ejemplo.com,IT,2024-01-04 00:00:00,2024-01-22 00:00:00
+33,Angela Salazar,angela.salazar@ejemplo.com,Recursos Humanos,2024-06-09 00:00:00,2024-06-17 00:00:00
+34,Mr. Ryan Sanchez,mr..ryan.sanchez@ejemplo.com,IT,2024-12-29 00:00:00,2025-01-06 00:00:00
+35,Autumn Robinson,autumn.robinson@ejemplo.com,Marketing,2024-12-07 00:00:00,2025-01-05 00:00:00
+36,Faith Cabrera,faith.cabrera@ejemplo.com,Soporte,2024-04-07 00:00:00,2024-04-29 00:00:00
+37,Charles Wolfe,charles.wolfe@ejemplo.com,Desarrollo,2024-06-19 00:00:00,2024-06-30 00:00:00
+38,Kenneth Kent,kenneth.kent@ejemplo.com,Administracion,2024-09-01 00:00:00,2024-09-21 00:00:00
+39,Melanie Johnson,melanie.johnson@ejemplo.com,Ventas,2024-04-11 00:00:00,2024-05-04 00:00:00
+40,Lisa Johnston,lisa.johnston@ejemplo.com,Ventas,2024-09-14 00:00:00,2024-09-27 00:00:00
+41,Jacob Hooper,jacob.hooper@ejemplo.com,Recursos Humanos,2024-01-07 00:00:00,2024-02-03 00:00:00
+42,Alex Woodward,alex.woodward@ejemplo.com,Desarrollo,2024-09-27 00:00:00,2024-10-22 00:00:00
+43,Caleb Clark,caleb.clark@ejemplo.com,Ventas,2024-01-21 00:00:00,2024-02-11 00:00:00
+44,Taylor Johnson,taylor.johnson@ejemplo.com,Marketing,2024-02-09 00:00:00,2024-02-21 00:00:00
+45,Brian Green,brian.green@ejemplo.com,Ventas,2024-08-03 00:00:00,2024-08-14 00:00:00
+46,Matthew Bell,matthew.bell@ejemplo.com,IT,2024-11-19 00:00:00,2024-11-27 00:00:00
+47,Jonathan Williams,jonathan.williams@ejemplo.com,IT,2024-10-06 00:00:00,2024-10-17 00:00:00
+48,William Gonzalez,william.gonzalez@ejemplo.com,Administracion,2024-07-28 00:00:00,2024-08-11 00:00:00
+49,Nicholas Massey,nicholas.massey@ejemplo.com,Seguridad,2024-01-27 00:00:00,2024-02-22 00:00:00
+50,Caroline Chambers,caroline.chambers@ejemplo.com,Administracion,2024-12-11 00:00:00,2024-12-25 00:00:00
+51,Amy Lowe,amy.lowe@ejemplo.com,Ventas,2024-02-27 00:00:00,2024-03-07 00:00:00
+52,Gloria King,gloria.king@ejemplo.com,Administracion,2024-12-03 00:00:00,2024-12-12 00:00:00
+53,Jessica Thompson,jessica.thompson@ejemplo.com,Administracion,2024-01-08 00:00:00,2024-01-20 00:00:00
+54,Jason Carroll,jason.carroll@ejemplo.com,Marketing,2024-06-20 00:00:00,2024-07-07 00:00:00
+55,Emily Howard,emily.howard@ejemplo.com,IT,2024-10-23 00:00:00,2024-11-01 00:00:00
+56,Danielle Castro,danielle.castro@ejemplo.com,Desarrollo,2024-09-14 00:00:00,2024-10-08 00:00:00
+57,Patrick Rogers,patrick.rogers@ejemplo.com,Marketing,2024-11-10 00:00:00,2024-11-20 00:00:00
+58,Douglas Allen,douglas.allen@ejemplo.com,Seguridad,2024-08-25 00:00:00,2024-09-22 00:00:00
+59,Heather Roberts,heather.roberts@ejemplo.com,Soporte,2024-05-27 00:00:00,2024-06-14 00:00:00
+60,Travis Schultz,travis.schultz@ejemplo.com,Soporte,2024-05-20 00:00:00,2024-05-26 00:00:00
+61,Michelle Hughes,michelle.hughes@ejemplo.com,Ventas,2024-12-19 00:00:00,2024-12-21 00:00:00
+62,Matthew Smith,matthew.smith@ejemplo.com,Ventas,2024-02-24 00:00:00,2024-03-17 00:00:00
+63,George Allen,george.allen@ejemplo.com,Desarrollo,2024-02-13 00:00:00,2024-03-03 00:00:00
+64,Jamie Hutchinson,jamie.hutchinson@ejemplo.com,Soporte,2024-03-28 00:00:00,2024-04-09 00:00:00
+65,Jennifer Morales,jennifer.morales@ejemplo.com,Marketing,2024-08-18 00:00:00,2024-09-06 00:00:00
+66,Jennifer Bates,jennifer.bates@ejemplo.com,Administracion,2024-05-08 00:00:00,2024-05-09 00:00:00
+67,Jeremy Green,jeremy.green@ejemplo.com,Marketing,2024-07-29 00:00:00,2024-07-30 00:00:00
+68,Joseph Freeman,joseph.freeman@ejemplo.com,Marketing,2024-04-19 00:00:00,2024-05-04 00:00:00
+69,Nicole Henson,nicole.henson@ejemplo.com,Desarrollo,2024-11-24 00:00:00,2024-12-03 00:00:00
+70,Eric Owens PhD,eric.owens.phd@ejemplo.com,Seguridad,2024-11-28 00:00:00,2024-12-09 00:00:00
+71,Robin Lopez,robin.lopez@ejemplo.com,Marketing,2024-08-12 00:00:00,2024-08-25 00:00:00
+72,Miss Angela Swanson DVM,miss.angela.swanson.dvm@ejemplo.com,IT,2024-09-22 00:00:00,2024-10-09 00:00:00
+73,Michael Stewart,michael.stewart@ejemplo.com,IT,2024-06-17 00:00:00,2024-07-07 00:00:00
+74,Mitchell Smith,mitchell.smith@ejemplo.com,IT,2024-10-09 00:00:00,2024-10-28 00:00:00
+75,Kelsey Davis,kelsey.davis@ejemplo.com,Seguridad,2024-09-11 00:00:00,2024-09-17 00:00:00
+76,Matthew Russo,matthew.russo@ejemplo.com,Administracion,2024-07-20 00:00:00,2024-08-08 00:00:00
+77,William Garcia,william.garcia@ejemplo.com,Desarrollo,2024-02-07 00:00:00,2024-03-06 00:00:00
+78,Jennifer Miller,jennifer.miller@ejemplo.com,Marketing,2024-05-16 00:00:00,2024-05-17 00:00:00
+79,Jesse Sparks,jesse.sparks@ejemplo.com,Seguridad,2024-03-12 00:00:00,2024-03-26 00:00:00
+80,Brandi Meyer,brandi.meyer@ejemplo.com,Soporte,2024-03-20 00:00:00,2024-04-13 00:00:00
+81,Hannah Wiggins,hannah.wiggins@ejemplo.com,Recursos Humanos,2024-04-25 00:00:00,2024-05-03 00:00:00
+82,Albert Williams,albert.williams@ejemplo.com,Desarrollo,2024-11-22 00:00:00,2024-11-27 00:00:00
+83,Kristin Potts,kristin.potts@ejemplo.com,Administracion,2024-11-16 00:00:00,2024-12-10 00:00:00
+84,Susan Williams,susan.williams@ejemplo.com,Ventas,2024-01-18 00:00:00,2024-02-12 00:00:00
+85,Meredith Rios,meredith.rios@ejemplo.com,Seguridad,2024-10-10 00:00:00,2024-10-14 00:00:00
+86,Stephanie Bowman,stephanie.bowman@ejemplo.com,Desarrollo,2024-03-29 00:00:00,2024-04-15 00:00:00
+87,Joshua Clark,joshua.clark@ejemplo.com,IT,2024-07-03 00:00:00,2024-07-03 00:00:00
+88,Alexa Hernandez,alexa.hernandez@ejemplo.com,Seguridad,2024-01-26 00:00:00,2024-02-09 00:00:00
+89,Richard Higgins,richard.higgins@ejemplo.com,Ventas,2024-07-31 00:00:00,2024-08-06 00:00:00
+90,Marc Williams,marc.williams@ejemplo.com,Desarrollo,2024-06-24 00:00:00,2024-06-24 00:00:00
+91,William Roberts,william.roberts@ejemplo.com,Soporte,2024-10-13 00:00:00,2024-10-15 00:00:00
+92,Joshua Carter,joshua.carter@ejemplo.com,Ventas,2024-07-21 00:00:00,2024-08-11 00:00:00
+93,David Williams,david.williams@ejemplo.com,Seguridad,2024-01-19 00:00:00,2024-01-20 00:00:00
+94,Joseph Jones,joseph.jones@ejemplo.com,Administracion,2024-06-27 00:00:00,2024-07-15 00:00:00
+95,Gary Perry,gary.perry@ejemplo.com,IT,2024-07-10 00:00:00,2024-08-03 00:00:00
+96,Terry Wells,terry.wells@ejemplo.com,Seguridad,2024-12-03 00:00:00,2024-12-07 00:00:00
+97,Vanessa Cooper,vanessa.cooper@ejemplo.com,Administracion,2024-04-08 00:00:00,2024-04-10 00:00:00
+98,Michael Simmons,michael.simmons@ejemplo.com,Desarrollo,2024-08-08 00:00:00,2024-08-14 00:00:00
+99,Nicholas Kline,nicholas.kline@ejemplo.com,Marketing,2024-01-31 00:00:00,2024-02-04 00:00:00
+100,Lori Bennett,lori.bennett@ejemplo.com,Marketing,2024-02-07 00:00:00,2024-02-12 00:00:00

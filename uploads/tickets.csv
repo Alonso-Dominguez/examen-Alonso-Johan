@@ -1,0 +1,101 @@
+ticket_id,cliente_id,asunto,descripcion,categoria,fecha_creacion,fecha_actualizacion,estado
+1,39,Consulta sobre servicio 72,El cliente reporta un problema con el servicio numero 17. Solicita revision.,Facturacion,2024-05-20 00:00:00,2024-05-31 00:00:00,En Proceso
+2,2,Consulta sobre servicio 22,El cliente reporta un problema con el servicio numero 87. Solicita revision.,Consulta General,2024-10-30 00:00:00,2024-11-01 00:00:00,Abierto
+3,40,Consulta sobre servicio 60,El cliente reporta un problema con el servicio numero 69. Solicita revision.,Soporte Tecnico,2024-12-30 00:00:00,2025-01-03 00:00:00,Cerrado
+4,47,Consulta sobre servicio 53,El cliente reporta un problema con el servicio numero 39. Solicita revision.,Soporte Tecnico,2024-09-26 00:00:00,2024-10-20 00:00:00,Cerrado
+5,35,Consulta sobre servicio 47,El cliente reporta un problema con el servicio numero 17. Solicita revision.,Sugerencia,2024-06-07 00:00:00,2024-06-25 00:00:00,Pendiente
+6,43,Consulta sobre servicio 52,El cliente reporta un problema con el servicio numero 54. Solicita revision.,Reclamo,2024-01-22 00:00:00,2024-01-24 00:00:00,En Proceso
+7,5,Consulta sobre servicio 82,El cliente reporta un problema con el servicio numero 41. Solicita revision.,Sugerencia,2024-03-27 00:00:00,2024-04-15 00:00:00,Abierto
+8,18,Consulta sobre servicio 4,El cliente reporta un problema con el servicio numero 7. Solicita revision.,Reclamo,2024-05-29 00:00:00,2024-06-01 00:00:00,Cerrado
+9,30,Consulta sobre servicio 41,El cliente reporta un problema con el servicio numero 32. Solicita revision.,Consulta General,2024-07-23 00:00:00,2024-08-15 00:00:00,En Proceso
+10,43,Consulta sobre servicio 3,El cliente reporta un problema con el servicio numero 20. Solicita revision.,Soporte Tecnico,2024-08-23 00:00:00,2024-08-28 00:00:00,Abierto
+11,40,Consulta sobre servicio 32,El cliente reporta un problema con el servicio numero 10. Solicita revision.,Consulta General,2024-11-24 00:00:00,2024-11-28 00:00:00,Cerrado
+12,30,Consulta sobre servicio 66,El cliente reporta un problema con el servicio numero 26. Solicita revision.,Facturacion,2024-03-15 00:00:00,2024-03-30 00:00:00,Cerrado
+13,34,Consulta sobre servicio 71,El cliente reporta un problema con el servicio numero 100. Solicita revision.,Facturacion,2024-05-27 00:00:00,2024-05-29 00:00:00,Abierto
+14,27,Consulta sobre servicio 66,El cliente reporta un problema con el servicio numero 16. Solicita revision.,Facturacion,2024-05-08 00:00:00,2024-06-04 00:00:00,Abierto
+15,16,Consulta sobre servicio 21,El cliente reporta un problema con el servicio numero 72. Solicita revision.,Reclamo,2024-03-16 00:00:00,2024-04-15 00:00:00,Pendiente
+16,24,Consulta sobre servicio 74,El cliente reporta un problema con el servicio numero 28. Solicita revision.,Sugerencia,2024-07-12 00:00:00,2024-08-06 00:00:00,Cerrado
+17,39,Consulta sobre servicio 19,El cliente reporta un problema con el servicio numero 66. Solicita revision.,Soporte Tecnico,2024-04-10 00:00:00,2024-05-04 00:00:00,En Proceso
+18,49,Consulta sobre servicio 42,El cliente reporta un problema con el servicio numero 62. Solicita revision.,Facturacion,2024-08-16 00:00:00,2024-08-22 00:00:00,Pendiente
+19,47,Consulta sobre servicio 4,El cliente reporta un problema con el servicio numero 53. Solicita revision.,Facturacion,2024-02-26 00:00:00,2024-03-19 00:00:00,Abierto
+20,22,Consulta sobre servicio 92,El cliente reporta un problema con el servicio numero 93. Solicita revision.,Soporte Tecnico,2024-01-13 00:00:00,2024-01-14 00:00:00,Pendiente
+21,5,Consulta sobre servicio 66,El cliente reporta un problema con el servicio numero 5. Solicita revision.,Facturacion,2024-06-27 00:00:00,2024-07-02 00:00:00,Abierto
+22,39,Consulta sobre servicio 12,El cliente reporta un problema con el servicio numero 54. Solicita revision.,Sugerencia,2024-12-25 00:00:00,2025-01-03 00:00:00,En Proceso
+23,46,Consulta sobre servicio 41,El cliente reporta un problema con el servicio numero 62. Solicita revision.,Consulta General,2024-09-19 00:00:00,2024-09-21 00:00:00,Pendiente
+24,38,Consulta sobre servicio 34,El cliente reporta un problema con el servicio numero 27. Solicita revision.,Reclamo,2024-09-07 00:00:00,2024-09-16 00:00:00,Cerrado
+25,3,Consulta sobre servicio 34,El cliente reporta un problema con el servicio numero 30. Solicita revision.,Reclamo,2024-01-15 00:00:00,2024-01-29 00:00:00,Abierto
+26,49,Consulta sobre servicio 14,El cliente reporta un problema con el servicio numero 50. Solicita revision.,Facturacion,2024-11-17 00:00:00,2024-12-05 00:00:00,Cerrado
+27,46,Consulta sobre servicio 74,El cliente reporta un problema con el servicio numero 68. Solicita revision.,Consulta General,2024-01-05 00:00:00,2024-01-07 00:00:00,Abierto
+28,39,Consulta sobre servicio 11,El cliente reporta un problema con el servicio numero 73. Solicita revision.,Consulta General,2024-08-17 00:00:00,2024-09-06 00:00:00,En Proceso
+29,19,Consulta sobre servicio 29,El cliente reporta un problema con el servicio numero 40. Solicita revision.,Consulta General,2024-02-26 00:00:00,2024-03-15 00:00:00,Abierto
+30,34,Consulta sobre servicio 95,El cliente reporta un problema con el servicio numero 54. Solicita revision.,Consulta General,2024-09-01 00:00:00,2024-09-14 00:00:00,Cerrado
+31,13,Consulta sobre servicio 82,El cliente reporta un problema con el servicio numero 11. Solicita revision.,Reclamo,2024-09-19 00:00:00,2024-10-16 00:00:00,En Proceso
+32,1,Consulta sobre servicio 49,El cliente reporta un problema con el servicio numero 72. Solicita revision.,Sugerencia,2024-12-08 00:00:00,2025-01-02 00:00:00,Cerrado
+33,2,Consulta sobre servicio 36,El cliente reporta un problema con el servicio numero 100. Solicita revision.,Reclamo,2024-09-06 00:00:00,2024-09-14 00:00:00,Cerrado
+34,46,Consulta sobre servicio 62,El cliente reporta un problema con el servicio numero 82. Solicita revision.,Consulta General,2024-02-26 00:00:00,2024-03-12 00:00:00,Abierto
+35,16,Consulta sobre servicio 53,El cliente reporta un problema con el servicio numero 64. Solicita revision.,Soporte Tecnico,2024-07-08 00:00:00,2024-08-05 00:00:00,En Proceso
+36,5,Consulta sobre servicio 2,El cliente reporta un problema con el servicio numero 77. Solicita revision.,Facturacion,2024-06-20 00:00:00,2024-06-25 00:00:00,Pendiente
+37,9,Consulta sobre servicio 55,El cliente reporta un problema con el servicio numero 54. Solicita revision.,Reclamo,2024-11-02 00:00:00,2024-11-02 00:00:00,Abierto
+38,50,Consulta sobre servicio 5,El cliente reporta un problema con el servicio numero 15. Solicita revision.,Reclamo,2024-12-04 00:00:00,2024-12-20 00:00:00,Pendiente
+39,19,Consulta sobre servicio 47,El cliente reporta un problema con el servicio numero 15. Solicita revision.,Reclamo,2024-04-17 00:00:00,2024-05-09 00:00:00,Cerrado
+40,42,Consulta sobre servicio 53,El cliente reporta un problema con el servicio numero 71. Solicita revision.,Facturacion,2024-03-09 00:00:00,2024-04-06 00:00:00,Cerrado
+41,48,Consulta sobre servicio 75,El cliente reporta un problema con el servicio numero 13. Solicita revision.,Reclamo,2024-08-13 00:00:00,2024-08-13 00:00:00,Pendiente
+42,39,Consulta sobre servicio 41,El cliente reporta un problema con el servicio numero 76. Solicita revision.,Consulta General,2024-12-13 00:00:00,2024-12-27 00:00:00,Pendiente
+43,49,Consulta sobre servicio 52,El cliente reporta un problema con el servicio numero 7. Solicita revision.,Facturacion,2024-11-29 00:00:00,2024-12-19 00:00:00,En Proceso
+44,24,Consulta sobre servicio 43,El cliente reporta un problema con el servicio numero 61. Solicita revision.,Sugerencia,2024-12-01 00:00:00,2024-12-13 00:00:00,Abierto
+45,27,Consulta sobre servicio 23,El cliente reporta un problema con el servicio numero 64. Solicita revision.,Reclamo,2024-02-29 00:00:00,2024-03-22 00:00:00,Abierto
+46,8,Consulta sobre servicio 40,El cliente reporta un problema con el servicio numero 91. Solicita revision.,Facturacion,2024-06-18 00:00:00,2024-06-29 00:00:00,Cerrado
+47,12,Consulta sobre servicio 75,El cliente reporta un problema con el servicio numero 97. Solicita revision.,Consulta General,2024-05-23 00:00:00,2024-06-10 00:00:00,Abierto
+48,18,Consulta sobre servicio 36,El cliente reporta un problema con el servicio numero 39. Solicita revision.,Facturacion,2024-02-27 00:00:00,2024-03-15 00:00:00,Cerrado
+49,7,Consulta sobre servicio 68,El cliente reporta un problema con el servicio numero 21. Solicita revision.,Sugerencia,2024-04-02 00:00:00,2024-04-05 00:00:00,Pendiente
+50,43,Consulta sobre servicio 3,El cliente reporta un problema con el servicio numero 60. Solicita revision.,Consulta General,2024-05-23 00:00:00,2024-06-11 00:00:00,Abierto
+51,36,Consulta sobre servicio 33,El cliente reporta un problema con el servicio numero 53. Solicita revision.,Sugerencia,2024-01-18 00:00:00,2024-02-03 00:00:00,En Proceso
+52,1,Consulta sobre servicio 20,El cliente reporta un problema con el servicio numero 25. Solicita revision.,Consulta General,2024-10-10 00:00:00,2024-11-06 00:00:00,Cerrado
+53,38,Consulta sobre servicio 15,El cliente reporta un problema con el servicio numero 18. Solicita revision.,Reclamo,2024-12-13 00:00:00,2025-01-07 00:00:00,En Proceso
+54,13,Consulta sobre servicio 43,El cliente reporta un problema con el servicio numero 96. Solicita revision.,Soporte Tecnico,2024-08-28 00:00:00,2024-09-03 00:00:00,En Proceso
+55,43,Consulta sobre servicio 6,El cliente reporta un problema con el servicio numero 97. Solicita revision.,Consulta General,2024-06-14 00:00:00,2024-06-17 00:00:00,En Proceso
+56,4,Consulta sobre servicio 33,El cliente reporta un problema con el servicio numero 50. Solicita revision.,Sugerencia,2024-10-17 00:00:00,2024-10-24 00:00:00,Pendiente
+57,20,Consulta sobre servicio 11,El cliente reporta un problema con el servicio numero 67. Solicita revision.,Consulta General,2024-08-04 00:00:00,2024-08-25 00:00:00,En Proceso
+58,49,Consulta sobre servicio 32,El cliente reporta un problema con el servicio numero 27. Solicita revision.,Facturacion,2024-07-11 00:00:00,2024-07-19 00:00:00,Cerrado
+59,24,Consulta sobre servicio 36,El cliente reporta un problema con el servicio numero 96. Solicita revision.,Soporte Tecnico,2024-07-07 00:00:00,2024-07-10 00:00:00,Cerrado
+60,41,Consulta sobre servicio 28,El cliente reporta un problema con el servicio numero 83. Solicita revision.,Soporte Tecnico,2024-05-03 00:00:00,2024-05-08 00:00:00,Cerrado
+61,41,Consulta sobre servicio 19,El cliente reporta un problema con el servicio numero 12. Solicita revision.,Reclamo,2024-10-21 00:00:00,2024-10-22 00:00:00,Abierto
+62,20,Consulta sobre servicio 24,El cliente reporta un problema con el servicio numero 48. Solicita revision.,Soporte Tecnico,2024-01-14 00:00:00,2024-02-13 00:00:00,Pendiente
+63,47,Consulta sobre servicio 81,El cliente reporta un problema con el servicio numero 17. Solicita revision.,Consulta General,2024-09-23 00:00:00,2024-10-20 00:00:00,Cerrado
+64,10,Consulta sobre servicio 44,El cliente reporta un problema con el servicio numero 91. Solicita revision.,Soporte Tecnico,2024-07-27 00:00:00,2024-08-09 00:00:00,Cerrado
+65,38,Consulta sobre servicio 75,El cliente reporta un problema con el servicio numero 4. Solicita revision.,Consulta General,2024-04-08 00:00:00,2024-04-24 00:00:00,Cerrado
+66,10,Consulta sobre servicio 48,El cliente reporta un problema con el servicio numero 42. Solicita revision.,Consulta General,2024-09-05 00:00:00,2024-09-24 00:00:00,En Proceso
+67,20,Consulta sobre servicio 88,El cliente reporta un problema con el servicio numero 99. Solicita revision.,Sugerencia,2024-03-14 00:00:00,2024-04-05 00:00:00,Abierto
+68,32,Consulta sobre servicio 29,El cliente reporta un problema con el servicio numero 88. Solicita revision.,Facturacion,2024-11-09 00:00:00,2024-11-19 00:00:00,En Proceso
+69,37,Consulta sobre servicio 51,El cliente reporta un problema con el servicio numero 43. Solicita revision.,Soporte Tecnico,2024-01-02 00:00:00,2024-01-31 00:00:00,Pendiente
+70,49,Consulta sobre servicio 62,El cliente reporta un problema con el servicio numero 15. Solicita revision.,Reclamo,2024-07-25 00:00:00,2024-08-14 00:00:00,Abierto
+71,21,Consulta sobre servicio 24,El cliente reporta un problema con el servicio numero 88. Solicita revision.,Facturacion,2024-11-26 00:00:00,2024-12-15 00:00:00,Pendiente
+72,27,Consulta sobre servicio 99,El cliente reporta un problema con el servicio numero 28. Solicita revision.,Sugerencia,2024-10-02 00:00:00,2024-10-23 00:00:00,Cerrado
+73,40,Consulta sobre servicio 68,El cliente reporta un problema con el servicio numero 87. Solicita revision.,Facturacion,2024-09-01 00:00:00,2024-09-12 00:00:00,Abierto
+74,25,Consulta sobre servicio 97,El cliente reporta un problema con el servicio numero 65. Solicita revision.,Consulta General,2024-03-10 00:00:00,2024-03-14 00:00:00,Pendiente
+75,36,Consulta sobre servicio 2,El cliente reporta un problema con el servicio numero 22. Solicita revision.,Reclamo,2024-10-18 00:00:00,2024-10-21 00:00:00,Pendiente
+76,28,Consulta sobre servicio 66,El cliente reporta un problema con el servicio numero 98. Solicita revision.,Consulta General,2024-10-28 00:00:00,2024-10-28 00:00:00,Cerrado
+77,17,Consulta sobre servicio 48,El cliente reporta un problema con el servicio numero 76. Solicita revision.,Facturacion,2024-06-18 00:00:00,2024-06-26 00:00:00,Pendiente
+78,37,Consulta sobre servicio 98,El cliente reporta un problema con el servicio numero 61. Solicita revision.,Sugerencia,2024-04-03 00:00:00,2024-04-09 00:00:00,Cerrado
+79,48,Consulta sobre servicio 92,El cliente reporta un problema con el servicio numero 37. Solicita revision.,Facturacion,2024-09-15 00:00:00,2024-10-15 00:00:00,Cerrado
+80,12,Consulta sobre servicio 86,El cliente reporta un problema con el servicio numero 34. Solicita revision.,Soporte Tecnico,2024-12-23 00:00:00,2025-01-22 00:00:00,Cerrado
+81,43,Consulta sobre servicio 70,El cliente reporta un problema con el servicio numero 71. Solicita revision.,Facturacion,2024-08-14 00:00:00,2024-08-28 00:00:00,Cerrado
+82,38,Consulta sobre servicio 20,El cliente reporta un problema con el servicio numero 16. Solicita revision.,Soporte Tecnico,2024-07-18 00:00:00,2024-07-25 00:00:00,Cerrado
+83,32,Consulta sobre servicio 87,El cliente reporta un problema con el servicio numero 17. Solicita revision.,Facturacion,2024-06-20 00:00:00,2024-07-10 00:00:00,Cerrado
+84,27,Consulta sobre servicio 52,El cliente reporta un problema con el servicio numero 6. Solicita revision.,Consulta General,2024-07-29 00:00:00,2024-08-26 00:00:00,Cerrado
+85,29,Consulta sobre servicio 17,El cliente reporta un problema con el servicio numero 51. Solicita revision.,Reclamo,2024-12-16 00:00:00,2024-12-21 00:00:00,Pendiente
+86,11,Consulta sobre servicio 98,El cliente reporta un problema con el servicio numero 64. Solicita revision.,Soporte Tecnico,2024-07-28 00:00:00,2024-08-13 00:00:00,Abierto
+87,24,Consulta sobre servicio 25,El cliente reporta un problema con el servicio numero 90. Solicita revision.,Consulta General,2024-05-30 00:00:00,2024-06-13 00:00:00,Cerrado
+88,41,Consulta sobre servicio 3,El cliente reporta un problema con el servicio numero 59. Solicita revision.,Sugerencia,2024-08-07 00:00:00,2024-08-29 00:00:00,Abierto
+89,28,Consulta sobre servicio 9,El cliente reporta un problema con el servicio numero 71. Solicita revision.,Reclamo,2024-08-10 00:00:00,2024-08-15 00:00:00,En Proceso
+90,19,Consulta sobre servicio 8,El cliente reporta un problema con el servicio numero 37. Solicita revision.,Facturacion,2024-05-25 00:00:00,2024-06-13 00:00:00,Cerrado
+91,10,Consulta sobre servicio 94,El cliente reporta un problema con el servicio numero 93. Solicita revision.,Soporte Tecnico,2024-05-04 00:00:00,2024-06-02 00:00:00,Cerrado
+92,19,Consulta sobre servicio 73,El cliente reporta un problema con el servicio numero 94. Solicita revision.,Facturacion,2024-11-20 00:00:00,2024-12-20 00:00:00,En Proceso
+93,49,Consulta sobre servicio 28,El cliente reporta un problema con el servicio numero 26. Solicita revision.,Soporte Tecnico,2024-11-15 00:00:00,2024-11-18 00:00:00,En Proceso
+94,35,Consulta sobre servicio 27,El cliente reporta un problema con el servicio numero 1. Solicita revision.,Sugerencia,2024-09-27 00:00:00,2024-10-22 00:00:00,Cerrado
+95,43,Consulta sobre servicio 62,El cliente reporta un problema con el servicio numero 93. Solicita revision.,Facturacion,2024-08-07 00:00:00,2024-08-19 00:00:00,En Proceso
+96,1,Consulta sobre servicio 70,El cliente reporta un problema con el servicio numero 96. Solicita revision.,Consulta General,2024-02-03 00:00:00,2024-02-15 00:00:00,Cerrado
+97,6,Consulta sobre servicio 40,El cliente reporta un problema con el servicio numero 65. Solicita revision.,Reclamo,2024-12-25 00:00:00,2025-01-11 00:00:00,En Proceso
+98,50,Consulta sobre servicio 91,El cliente reporta un problema con el servicio numero 39. Solicita revision.,Reclamo,2024-01-12 00:00:00,2024-01-12 00:00:00,Pendiente
+99,9,Consulta sobre servicio 35,El cliente reporta un problema con el servicio numero 65. Solicita revision.,Facturacion,2024-08-12 00:00:00,2024-08-19 00:00:00,En Proceso
+100,33,Consulta sobre servicio 36,El cliente reporta un problema con el servicio numero 92. Solicita revision.,Facturacion,2024-03-04 00:00:00,2024-03-18 00:00:00,En Proceso

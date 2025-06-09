@@ -1,0 +1,30 @@
+[
+  {
+    "Nombre": "Angel",
+    "Edad": 50,
+    "Sexo": null,
+    "País": "Mexico",
+    "Hora": null
+  },
+  {
+    "Nombre": "Maria",
+    "Edad": null,
+    "Sexo": "Femenino",
+    "País": "Francia",
+    "Hora": null
+  },
+  {
+    "Nombre": "Fernando",
+    "Edad": null,
+    "Sexo": "Masculino",
+    "País": null,
+    "Hora": null
+  },
+  {
+    "Nombre": "Angel",
+    "Edad": 50,
+    "Sexo": null,
+    "País": "Mexico",
+    "Hora": null
+  }
+]
